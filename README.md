@@ -24,13 +24,9 @@ Custom background image size preview
 
 ![Screenshot of the admin column](https://raw.github.com/Horttcore/Custom-Background-Image-Size/master/screenshot-2.png)
 
-## Hooks
+Custom background image size in customizer
 
-### Filters
-
-* `default-selector` - Selector
-* `background-image-size` - Background image size value
-* `background-image-size-important` - Use `!important` rule ( default: FALSE )
+![Screenshot of the admin column](https://raw.github.com/Horttcore/Custom-Background-Image-Size/master/screenshot-3.png)
 
 ## Frequently Asked Questions
 
@@ -42,7 +38,26 @@ You are absolutly right, this will be included in the next version of the plugin
 
 Please report bugs and wishes at [github](https://github.com/Horttcore/Custom-Background-Image-Size/issues)
 
+## Languages
+
+* English
+* German
+
+## Hooks
+
+### Filters
+
+* `background-image-selector` - Selector
+* `background-image-size` - Background image size value
+* `background-image-size-important` - Use `!important` rule ( default: FALSE )
+
 ## Changelog
+
+### v1.1
+
+* Added: Customizer support
+* Enhancement: Javascript improvements
+* Fixes: Translation error
 
 ### v1.0
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Custom Background Image Size v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-01-21 10:05:51+0000\n"
+"PO-Revision-Date: 2014-01-26 14:22:39+0000\n"
 "Last-Translator: horttcore <me@horttcore.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,43 +20,54 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: custom-background-image-size.php:143
+#: custom-background-image-size.php:115
+#: custom-background-image-size.php:209
 #@ custom-background-image-size
 msgid "Auto"
 msgstr "Auto"
 
-#: custom-background-image-size.php:144
+#: custom-background-image-size.php:210
 #@ custom-background-image-size
 msgid "Dimensions of the background image"
 msgstr "Größe des Hintergrundbildes"
 
-#: custom-background-image-size.php:148
+#: custom-background-image-size.php:116
+#: custom-background-image-size.php:214
 #@ custom-background-image-size
 msgid "Contain"
 msgstr "Contain"
 
-#: custom-background-image-size.php:149
+#: custom-background-image-size.php:117
+#: custom-background-image-size.php:215
 #@ custom-background-image-size
 msgid "Cover"
 msgstr "Cover"
 
-#: custom-background-image-size.php:150
+#: custom-background-image-size.php:118
+#: custom-background-image-size.php:216
 #@ custom-background-image-size
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
-#: custom-background-image-size.php:151
+#: custom-background-image-size.php:217
 #@ custom-background-image-size
 msgid "Image size"
 msgstr "Bildgröße"
 
-#: custom-background-image-size.php:152
+#: custom-background-image-size.php:140
+#: custom-background-image-size.php:218
 #@ custom-background-image-size
 msgid "Height"
-msgstr "Breite"
+msgstr "Höhe"
 
-#: custom-background-image-size.php:154
+#: custom-background-image-size.php:129
+#: custom-background-image-size.php:220
 #@ custom-background-image-size
 msgid "Width"
-msgstr "Höhe"
+msgstr "Breite"
+
+#: custom-background-image-size.php:111
+#@ custom-background-image-size
+msgid "Background Image Size"
+msgstr "Größe des Hintergrundbildes"
 

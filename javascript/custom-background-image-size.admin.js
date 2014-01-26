@@ -10,10 +10,10 @@ jQuery(document).ready(function(){
 
 				plugin.container = false
 				plugin.backgroundSizeInput = false;
+				plugin.backgroundSizeCustom = false;
 				plugin.backgroundImageHeight = false;
 				plugin.backgroundImageWidth = false;
 				plugin.currentBackgroundSize = false;
-				plugin.customValues = false;
 				plugin.preview = jQuery('#custom-background-image');
 				plugin.saveValue = 'auto auto';
 				plugin.sendForm = false;
@@ -32,10 +32,12 @@ jQuery(document).ready(function(){
 
 				plugin.currentBackgroundSize = plugin.container.find( 'input:checked' );
 
-				if ( 'custom' == plugin.currentBackgroundSize.val() )
-					plugin.customValues.removeClass('hidden');
-				else
-					plugin.customValues.addClass('hidden');
+				if ( 'custom' == plugin.currentBackgroundSize.val() ) {
+					plugin.backgroundImageWidth.focus();
+				} else {
+					plugin.backgroundImageHeight.val('');
+					plugin.backgroundImageWidth.val('');
+				}
 
 				plugin.updatePreview();
 
@@ -43,10 +45,12 @@ jQuery(document).ready(function(){
 
 			// Custom value preview update
 			plugin.backgroundImageWidth.keyup(function(){
+				plugin.backgroundSizeCustom.attr('checked','checked');
 				plugin.updatePreview();
 			});
 
 			plugin.backgroundImageHeight.keyup(function(){
+				plugin.backgroundSizeCustom.attr('checked','checked');
 				plugin.updatePreview();
 			});
 
@@ -79,7 +83,6 @@ jQuery(document).ready(function(){
 				customChecked = ( 'custom' == customBackgroundImageSizeOptions.value ) ? 'checked="checked"' : '',
 				containChecked = ( 'contain' == customBackgroundImageSizeOptions.value ) ? 'checked="checked"' : '',
 				coverChecked = ( 'cover' == customBackgroundImageSizeOptions.value ) ? 'checked="checked"' : '',
-				customHidden = ( '' == customBackgroundImageSizeOptions.backgroundImageHeight && '' == customBackgroundImageSizeOptions.backgroundImageWidth ) ? 'hidden' : '';
 
 			html =
 				'<tr class="background-image-size-container">' +
@@ -94,10 +97,8 @@ jQuery(document).ready(function(){
 							'<label><input name="background-size" ' + coverChecked + ' type="radio" value="cover">' + customBackgroundImageSizeOptions.cover + '</label> ' +
 							'<label>' +
 								'<input name="background-size" ' + customChecked + ' type="radio" value="custom">' + customBackgroundImageSizeOptions.custom +
-								'<span class="custom-values ' + customHidden + '">: ' +
-									'<input type="text" name="background-image-width" placeholder="' + customBackgroundImageSizeOptions.width + '" value="' + customBackgroundImageSizeOptions.backgroundImageWidth + '">' +
-									'<input type="text" name="background-image-height" placeholder="' + customBackgroundImageSizeOptions.height + '" value="' + customBackgroundImageSizeOptions.backgroundImageHeight + '">' +
-								'</span>' +
+								': <input type="text" name="background-image-width" placeholder="' + customBackgroundImageSizeOptions.width + '" value="' + customBackgroundImageSizeOptions.backgroundImageWidth + '">' +
+								'<input type="text" name="background-image-height" placeholder="' + customBackgroundImageSizeOptions.height + '" value="' + customBackgroundImageSizeOptions.backgroundImageHeight + '">' +
 							'</label> ' +
 						'</fieldset>' +
 					'</td>' +
@@ -112,9 +113,9 @@ jQuery(document).ready(function(){
 
 			plugin.container = jQuery('.background-image-size-container');
 			plugin.backgroundSizeInput = plugin.container.find('input[name="background-size"]');
-			plugin.customValues = plugin.container.find('.custom-values');
-			plugin.backgroundImageHeight = plugin.customValues.find('input[name="background-image-height"]');
-			plugin.backgroundImageWidth = plugin.customValues.find('input[name="background-image-width"]');
+			plugin.backgroundSizeCustom = plugin.container.find('input[value="custom"]');
+			plugin.backgroundImageHeight = plugin.container.find('input[name="background-image-height"]');
+			plugin.backgroundImageWidth = plugin.container.find('input[name="background-image-width"]');
 
 			plugin.bindEvents();
 
@@ -129,7 +130,6 @@ jQuery(document).ready(function(){
 			});
 
 		}
-
 
 	}
 
